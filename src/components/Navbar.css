@@ -101,13 +101,13 @@
   
   .btn-login {
     background: transparent;
-    color: var(--accent-purple);
-    border: 2px solid var(--accent-purple);
+    color: white;
+    border: 2px solid white;
   }
   
   .btn-login:hover {
-    background: var(--accent-purple);
-    color: var(--bg-primary);
+    background: white;
+    color: purple;
     box-shadow: 0 0 20px var(--glow-purple);
   }
   
