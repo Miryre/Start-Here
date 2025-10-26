@@ -1,16 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-     <header className="App-header">
-  <h1>StartHere</h1>
-  <p>Your guide to affordable college living 🎓</p>
-  <p>Coming soon: Resources for food, clothing, self-care & more!</p>
-</header>
+      <Navbar />
+      
+      {/* Hero Section - We'll build this next */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1>StartHere</h1>
+          <p>Your guide to affordable college living</p>
+        </div>
+      </section>
     </div>
   );
-}
+};
 
 export default App;
