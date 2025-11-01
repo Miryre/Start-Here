@@ -3,23 +3,53 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
-  // State to control modal open/close
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // State to control modals
+  const [isResourcesModalOpen, setIsResourcesModalOpen] = useState(false);
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
+  const [email, setEmail] = useState('');
+  const [school, setSchool] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
-  // Function to open modal
-  const openModal = () => {
-    setIsModalOpen(true);
+  // Resources Modal Functions
+  const openResourcesModal = () => {
+    setIsResourcesModalOpen(true);
   };
 
-  // Function to close modal
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const closeResourcesModal = () => {
+    setIsResourcesModalOpen(false);
   };
 
-  // Close modal when clicking outside of it
+  // Email Modal Functions
+  const openEmailModal = () => {
+    setIsEmailModalOpen(true);
+    setSubmitted(false);
+  };
+
+  const closeEmailModal = () => {
+    setIsEmailModalOpen(false);
+    setEmail('');
+    setSchool('');
+    setSubmitted(false);
+  };
+
+  // Handle Email Signup
+  const handleEmailSubmit = (e) => {
+    e.preventDefault();
+    // TODO: Send to backend/email service later
+    console.log('Email:', email, 'School:', school);
+    setSubmitted(true);
+    
+    // Close modal after 2 seconds
+    setTimeout(() => {
+      closeEmailModal();
+    }, 2000);
+  };
+
+  // Close modal when clicking outside
   const handleBackdropClick = (e) => {
     if (e.target.className === 'modal-backdrop') {
-      closeModal();
+      closeResourcesModal();
+      closeEmailModal();
     }
   };
 
@@ -45,7 +75,7 @@ const Navbar = () => {
             {/* Navigation Links */}
             <div className="nav-links">
               {/* Resources Button - Opens Modal */}
-              <button className="nav-link-btn" onClick={openModal}>
+              <button className="nav-link-btn" onClick={openResourcesModal}>
                 Resources
               </button>
 
@@ -54,30 +84,31 @@ const Navbar = () => {
               <Link to="/contact">Contact</Link>
             </div>
 
-            {/* Auth Buttons */}
+            {/* Email Signup Button */}
             <div className="nav-auth">
-              <button className="btn-login">Log In</button>
-              <button className="btn-signup">Sign Up</button>
+              <button className="btn-signup" onClick={openEmailModal}>
+                Get Updates 📧
+              </button>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Resources Modal */}
-      {isModalOpen && (
+      {isResourcesModalOpen && (
         <div className="modal-backdrop" onClick={handleBackdropClick}>
           <div className="modal-content">
             {/* Modal Header */}
             <div className="modal-header">
               <h2>Explore Resources</h2>
-              <button className="modal-close" onClick={closeModal}>
+              <button className="modal-close" onClick={closeResourcesModal}>
                 ✕
               </button>
             </div>
 
             {/* Modal Body - Preview Cards */}
             <div className="modal-body">
-              <Link to="/living-essentials" className="preview-card" onClick={closeModal}>
+              <Link to="/living-essentials" className="preview-card" onClick={closeResourcesModal}>
                 <div className="preview-image">
                   <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop" alt="Living Essentials" />
                 </div>
@@ -87,7 +118,7 @@ const Navbar = () => {
                 </div>
               </Link>
 
-              <Link to="/emergency" className="preview-card" onClick={closeModal}>
+              <Link to="/emergency" className="preview-card" onClick={closeResourcesModal}>
                 <div className="preview-image">
                   <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=250&fit=crop" alt="Emergency Aid" />
                 </div>
@@ -97,7 +128,7 @@ const Navbar = () => {
                 </div>
               </Link>
 
-              <Link to="/academic" className="preview-card" onClick={closeModal}>
+              <Link to="/academic" className="preview-card" onClick={closeResourcesModal}>
                 <div className="preview-image">
                   <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=250&fit=crop" alt="Academic Support" />
                 </div>
@@ -107,7 +138,7 @@ const Navbar = () => {
                 </div>
               </Link>
 
-              <Link to="/activities" className="preview-card" onClick={closeModal}>
+              <Link to="/activities" className="preview-card" onClick={closeResourcesModal}>
                 <div className="preview-image">
                   <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=250&fit=crop" alt="Activities" />
                 </div>
@@ -117,7 +148,7 @@ const Navbar = () => {
                 </div>
               </Link>
 
-              <Link to="/career" className="preview-card" onClick={closeModal}>
+              <Link to="/career" className="preview-card" onClick={closeResourcesModal}>
                 <div className="preview-image">
                   <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop" alt="Career" />
                 </div>
@@ -127,7 +158,7 @@ const Navbar = () => {
                 </div>
               </Link>
 
-              <Link to="/community" className="preview-card" onClick={closeModal}>
+              <Link to="/community" className="preview-card" onClick={closeResourcesModal}>
                 <div className="preview-image">
                   <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=250&fit=crop" alt="Community" />
                 </div>
@@ -138,11 +169,76 @@ const Navbar = () => {
               </Link>
             </div>
 
-            {/* Modal Footer - Browse All Button */}
+            {/* Modal Footer */}
             <div className="modal-footer">
-              <button className="btn-browse-all" onClick={closeModal}>
+              <button className="btn-browse-all" onClick={closeResourcesModal}>
                 Browse All Resources →
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Email Signup Modal */}
+      {isEmailModalOpen && (
+        <div className="modal-backdrop" onClick={handleBackdropClick}>
+          <div className="modal-content email-modal">
+            {/* Modal Header */}
+            <div className="modal-header">
+              <h2>Stay Updated 📧</h2>
+              <button className="modal-close" onClick={closeEmailModal}>
+                ✕
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="email-modal-body">
+              {!submitted ? (
+                <>
+                  <p className="email-modal-description">
+                    Get notified when we add new resources, tips, and opportunities for students!
+                  </p>
+                  
+                  <form onSubmit={handleEmailSubmit} className="email-form">
+                    <div className="form-group">
+                      <label htmlFor="email">Email Address *</label>
+                      <input
+                        type="email"
+                        id="email"
+                        placeholder="your.email@example.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <label htmlFor="school">School (Optional)</label>
+                      <input
+                        type="text"
+                        id="school"
+                        placeholder="Your university or college"
+                        value={school}
+                        onChange={(e) => setSchool(e.target.value)}
+                      />
+                    </div>
+
+                    <button type="submit" className="btn-submit-email">
+                      Subscribe 🎉
+                    </button>
+                  </form>
+
+                  <p className="email-modal-note">
+                    We respect your privacy. Unsubscribe anytime.
+                  </p>
+                </>
+              ) : (
+                <div className="success-message">
+                  <div className="success-icon">✓</div>
+                  <h3>Thanks for subscribing!</h3>
+                  <p>We'll keep you updated on new resources and tips.</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
