@@ -32,17 +32,37 @@ const Navbar = () => {
     setSubmitted(false);
   };
 
-  // Handle Email Signup
-  const handleEmailSubmit = (e) => {
+  // Handle Email Signup - Formspree Integration
+  const handleEmailSubmit = async (e) => {
     e.preventDefault();
-    // TODO: Send to backend/email service later
-    console.log('Email:', email, 'School:', school);
-    setSubmitted(true);
     
-    // Close modal after 2 seconds
-    setTimeout(() => {
-      closeEmailModal();
-    }, 2000);
+    try {
+      const response = await fetch('https://formspree.io/f/xkgppagd', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          school: school,
+          source: 'StartHere Newsletter Signup'
+        })
+      });
+      
+      if (response.ok) {
+        setSubmitted(true);
+        
+        // Close modal after 2 seconds
+        setTimeout(() => {
+          closeEmailModal();
+        }, 2000);
+      } else {
+        alert('Something went wrong. Please try again!');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Something went wrong. Please try again!');
+    }
   };
 
   // Close modal when clicking outside
