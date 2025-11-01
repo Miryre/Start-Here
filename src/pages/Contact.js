@@ -12,10 +12,11 @@ const Contact = () => {
       <div className="page-content">
         <section className="resource-category">
           <h2>Get In Touch</h2>
-          <p>Have questions, suggestions, or resources to share? Reach out to us!</p>
+          <p>We're currently setting up our official contact channels to better serve you. 
+          In the meantime, the best way to stay connected is to subscribe to our updates!</p>
           <p style={{ marginTop: '1rem' }}>
-            <strong>Email:</strong> hello@starthere.com<br />
-            <strong>Social Media:</strong> @StartHereApp
+            <strong>Email:</strong> Our Contact Form Is Coming Soon.<br />
+            <strong>Social Media:</strong> Email and social media channels will be announced shortly.
           </p>
         </section>
 
