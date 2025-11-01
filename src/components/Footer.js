@@ -9,7 +9,12 @@ const Footer = () => {
         {/* Left Section - Brand */}
         <div className='footer-section footer-brand'>
           <div className='footer-logo'>
-            <h3>StartHere 🎓</h3>
+            <h3>StartHere<img
+                width="48"
+                height="48"
+                src="https://img.icons8.com/color/48/path--v1.png"
+                alt="path--v1"
+              /></h3>
           </div>
           <p className='footer-tagline'>
             Your guide to affordable college living
