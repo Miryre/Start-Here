@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -9,7 +10,7 @@ const Footer = () => {
         {/* Left Section - Brand */}
         <div className='footer-section footer-brand'>
           <div className='footer-logo'>
-            <h3>StartHere<img
+            <h3>StartHere <img
                 width="48"
                 height="48"
                 src="https://img.icons8.com/color/48/path--v1.png"
@@ -20,7 +21,7 @@ const Footer = () => {
             Your guide to affordable college living
           </p>
           <p className='footer-copyright'>
-            © 2025 StartHere. Made with 💙 for students.
+            © 2025 StartHere. Made with 💙 by a student for students.
           </p>
         </div>
 
@@ -28,12 +29,12 @@ const Footer = () => {
         <div className='footer-section footer-links'>
           <h4>Resources</h4>
           <ul>
-            <li><a href='#living-essentials'>Living Essentials</a></li>
-            <li><a href='#emergency'>Emergency Aid</a></li>
-            <li><a href='#academic'>Academic Support</a></li>
-            <li><a href='#activities'>Activities</a></li>
-            <li><a href='#career'>Career & Internships</a></li>
-            <li><a href='#community'>Community Forum</a></li>
+            <li><Link to='/living-essentials'>Living Essentials</Link></li>
+            <li><Link to='/emergency'>Emergency Aid</Link></li>
+            <li><Link to='/academic'>Academic Support</Link></li>
+            <li><Link to='/activities'>Activities</Link></li>
+            <li><Link to='/career'>Career & Internships</Link></li>
+            <li><Link to='/community'>Community Forum</Link></li>
           </ul>
         </div>
 
@@ -41,8 +42,8 @@ const Footer = () => {
         <div className='footer-section footer-info'>
           <h4>Company</h4>
           <ul>
-            <li><a href='#about'>About Us</a></li>
-            <li><a href='#contact'>Contact</a></li>
+            <li><Link to='/about'>About Us</Link></li>
+            <li><Link to='/contact'>Contact</Link></li>
             <li><a href='#privacy'>Privacy Policy</a></li>
             <li><a href='#terms'>Terms of Service</a></li>
           </ul>

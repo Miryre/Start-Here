@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -27,7 +28,7 @@ const Navbar = () => {
       <nav className='navbar'>
         <div className='nav-container'>
           {/* Logo */}
-          <div className='nav-brand'>
+          <Link to="/" className='nav-brand'>
             <h2>
               StartHere
               <img
@@ -37,7 +38,7 @@ const Navbar = () => {
                 alt="path--v1"
               />
             </h2>
-          </div>
+          </Link>
 
           {/* Everything else grouped on RIGHT */}
           <div className='nav-right'>
@@ -49,8 +50,8 @@ const Navbar = () => {
               </button>
 
               {/* Regular Links */}
-              <a href="#about">About</a>
-              <a href="#contact">Contact</a>
+              <Link to="/about">About</Link>
+              <Link to="/contact">Contact</Link>
             </div>
 
             {/* Auth Buttons */}
@@ -76,7 +77,7 @@ const Navbar = () => {
 
             {/* Modal Body - Preview Cards */}
             <div className="modal-body">
-              <a href="#living-essentials" className="preview-card" onClick={closeModal}>
+              <Link to="/living-essentials" className="preview-card" onClick={closeModal}>
                 <div className="preview-image">
                   <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop" alt="Living Essentials" />
                 </div>
@@ -84,9 +85,9 @@ const Navbar = () => {
                   <h3>🏠 Living Essentials</h3>
                   <p>Find affordable food, housing, clothing & self-care resources to make college life more manageable.</p>
                 </div>
-              </a>
+              </Link>
 
-              <a href="#emergency" className="preview-card" onClick={closeModal}>
+              <Link to="/emergency" className="preview-card" onClick={closeModal}>
                 <div className="preview-image">
                   <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=250&fit=crop" alt="Emergency Aid" />
                 </div>
@@ -94,9 +95,9 @@ const Navbar = () => {
                   <h3>🚨 Emergency Aid</h3>
                   <p>Access financial help, crisis support, and emergency resources when you need them most.</p>
                 </div>
-              </a>
+              </Link>
 
-              <a href="#academic" className="preview-card" onClick={closeModal}>
+              <Link to="/academic" className="preview-card" onClick={closeModal}>
                 <div className="preview-image">
                   <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=250&fit=crop" alt="Academic Support" />
                 </div>
@@ -104,9 +105,9 @@ const Navbar = () => {
                   <h3>📚 Academic Support</h3>
                   <p>Get tutoring, textbook assistance, and study resources to help you succeed academically.</p>
                 </div>
-              </a>
+              </Link>
 
-              <a href="#activities" className="preview-card" onClick={closeModal}>
+              <Link to="/activities" className="preview-card" onClick={closeModal}>
                 <div className="preview-image">
                   <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=250&fit=crop" alt="Activities" />
                 </div>
@@ -114,9 +115,9 @@ const Navbar = () => {
                   <h3>🎯 Activities</h3>
                   <p>Discover free and low-cost campus events, clubs, and social activities to stay engaged.</p>
                 </div>
-              </a>
+              </Link>
 
-              <a href="#career" className="preview-card" onClick={closeModal}>
+              <Link to="/career" className="preview-card" onClick={closeModal}>
                 <div className="preview-image">
                   <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop" alt="Career" />
                 </div>
@@ -124,9 +125,9 @@ const Navbar = () => {
                   <h3>💼 Career & Internships</h3>
                   <p>Explore job boards, resume help, interview prep, and internship opportunities.</p>
                 </div>
-              </a>
+              </Link>
 
-              <a href="#community" className="preview-card" onClick={closeModal}>
+              <Link to="/community" className="preview-card" onClick={closeModal}>
                 <div className="preview-image">
                   <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=250&fit=crop" alt="Community" />
                 </div>
@@ -134,11 +135,11 @@ const Navbar = () => {
                   <h3>💬 Community Forum</h3>
                   <p>Connect with fellow students, share experiences, ask questions, and build your support network.</p>
                 </div>
-              </a>
+              </Link>
             </div>
 
-{/* Modal Footer - Browse All Button */}
-<div className="modal-footer">
+            {/* Modal Footer - Browse All Button */}
+            <div className="modal-footer">
               <button className="btn-browse-all" onClick={closeModal}>
                 Browse All Resources →
               </button>
