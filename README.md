@@ -4,7 +4,7 @@
 
 A React-based web application helping college students discover essential resources for affordable living, academic support, emergency aid, and career development.
 
-**🌐 Live Site:** [https://your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
+**🌐 Live Site:** [https://start-here-eight.vercel.app](https://start-here-eight.vercel.app)
 
 ---
 
@@ -232,7 +232,7 @@ Built by Elysa Diane, a developer passionate about using technology to help stud
 
 **Connect:**
 - GitHub: [@Miryre](https://github.com/Miryre)
-- Live Site: [StartHere](https://your-vercel-url.vercel.app)
+- Live Site: [StartHere](https://start-here-eight.vercel.app)
 
 ---
 
