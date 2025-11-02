@@ -107,7 +107,7 @@ const Navbar = () => {
             {/* Email Signup Button */}
             <div className="nav-auth">
               <button className="btn-signup" onClick={openEmailModal}>
-                Get Updates 📧
+                Get Updates
               </button>
             </div>
           </div>
@@ -205,7 +205,7 @@ const Navbar = () => {
           <div className="modal-content email-modal">
             {/* Modal Header */}
             <div className="modal-header">
-              <h2>Stay Updated 📧</h2>
+              <h2>Stay Updated</h2>
               <button className="modal-close" onClick={closeEmailModal}>
                 ✕
               </button>
@@ -244,7 +244,7 @@ const Navbar = () => {
                     </div>
 
                     <button type="submit" className="btn-submit-email">
-                      Subscribe 🎉
+                      Subscribe
                     </button>
                   </form>
 
