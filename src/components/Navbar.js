@@ -133,7 +133,7 @@ const Navbar = () => {
                   <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop" alt="Living Essentials" />
                 </div>
                 <div className="preview-content">
-                  <h3>🏠 Living Essentials</h3>
+                  <h3>Living Essentials</h3>
                   <p>Find affordable food, housing, clothing & self-care resources to make college life more manageable.</p>
                 </div>
               </Link>
@@ -143,7 +143,7 @@ const Navbar = () => {
                   <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=250&fit=crop" alt="Emergency Aid" />
                 </div>
                 <div className="preview-content">
-                  <h3>🚨 Emergency Aid</h3>
+                  <h3>Emergency Aid</h3>
                   <p>Access financial help, crisis support, and emergency resources when you need them most.</p>
                 </div>
               </Link>
@@ -153,7 +153,7 @@ const Navbar = () => {
                   <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=250&fit=crop" alt="Academic Support" />
                 </div>
                 <div className="preview-content">
-                  <h3>📚 Academic Support</h3>
+                  <h3>Academic Support</h3>
                   <p>Get tutoring, textbook assistance, and study resources to help you succeed academically.</p>
                 </div>
               </Link>
@@ -163,7 +163,7 @@ const Navbar = () => {
                   <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=250&fit=crop" alt="Activities" />
                 </div>
                 <div className="preview-content">
-                  <h3>🎯 Activities</h3>
+                  <h3>Activities</h3>
                   <p>Discover free and low-cost campus events, clubs, and social activities to stay engaged.</p>
                 </div>
               </Link>
@@ -173,7 +173,7 @@ const Navbar = () => {
                   <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop" alt="Career" />
                 </div>
                 <div className="preview-content">
-                  <h3>💼 Career & Internships</h3>
+                  <h3>Career & Internships</h3>
                   <p>Explore job boards, resume help, interview prep, and internship opportunities.</p>
                 </div>
               </Link>
@@ -183,7 +183,7 @@ const Navbar = () => {
                   <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=250&fit=crop" alt="Community" />
                 </div>
                 <div className="preview-content">
-                  <h3>💬 Community Forum</h3>
+                  <h3>Community Forum</h3>
                   <p>Connect with fellow students, share experiences, ask questions, and build your support network.</p>
                 </div>
               </Link>
